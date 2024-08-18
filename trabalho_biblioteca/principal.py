@@ -1,8 +1,6 @@
-
 from biblioteca import adicionar_livro, listar_livros, adicionar_usuario, emprestar_livro, devolver_livro
 
 def exibir_livros():
-    """Exibe todos os livros disponíveis."""
     livros = listar_livros()
     if not livros:
         print("Nenhum livro disponível.")
