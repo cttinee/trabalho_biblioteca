@@ -10,27 +10,29 @@ def exibir_livros():
 
 def main():
     while True:
-        print("\nMenu:")
-        print("1. Adicionar livro")
-        print("2. Listar livros")
-        print("3. Adicionar usuário")
-        print("4. Emprestar livro")
-        print("5. Devolver livro")
-        print("6. Sair")
+        print("\n- Menu do sistema da biblioteca")
+        print()
+        print("1. Cadastrar usuário.")
+        print("2. Adicionar livros.")
+        print("3. Listar Livros.")
+        print("4. Emprestar livro.")
+        print("5. Devolver livro.")
+        print("6. Fechar o sistema.")
+        print()
 
         opcao = input("Escolha uma opção: ")
 
         if opcao == '1':
+            nome = input("Digite o novo nome do usuário: ")
+            adicionar_usuario(nome)
+            print(f'Usuário "{nome}" adicionado com sucesso!')
+        elif opcao == '2':
             titulo = input("Digite o título do livro: ")
             autor = input("Digite o autor do livro: ")
             adicionar_livro(titulo, autor)
             print(f'Livro "{titulo}" adicionado com sucesso!')
-        elif opcao == '2':
-            exibir_livros()
         elif opcao == '3':
-            nome = input("Digite o nome do usuário: ")
-            adicionar_usuario(nome)
-            print(f'Usuário "{nome}" adicionado com sucesso!')
+            exibir_livros()
         elif opcao == '4':
             nome_usuario = input("Digite o nome do usuário: ")
             titulo_livro = input("Digite o título do livro: ")
@@ -41,7 +43,7 @@ def main():
             resultado = devolver_livro(titulo_livro)
             print(resultado)
         elif opcao == '6':
-            print("Saindo...")
+            print("Até mais!")
             break
         else:
             print("Opção inválida, tente novamente.")
